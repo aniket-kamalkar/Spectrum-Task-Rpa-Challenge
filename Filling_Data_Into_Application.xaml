@@ -160,7 +160,7 @@
                   </ActivityAction>
                 </ui:AnchorBase.Action>
                 <ui:AnchorBase.AnchorProvider>
-                  <ui:WaitUiElementAppear FoundElement="{x:Null}" WaitActive="{x:Null}" DisplayName="Find Element 'First Name'" sap:VirtualizedContainerService.HintSize="334,107" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_5" WaitVisible="True">
+                  <ui:WaitUiElementAppear FoundElement="{x:Null}" WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Find Element 'First Name'" sap:VirtualizedContainerService.HintSize="334,107" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_5">
                     <ui:WaitUiElementAppear.Target>
                       <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="9eaaeaa5-9b7f-498c-87d5-96b6a8e8ca82" InformativeScreenshot="5910a794a2f668292c592cc0b3732c32" Selector="&lt;html app='chrome.exe' title='Rpa Challenge' /&gt;&lt;webctrl aaname='First Name' tag='LABEL' /&gt;">
                         <ui:Target.TimeoutMS>
@@ -195,7 +195,7 @@
                   </ActivityAction>
                 </ui:AnchorBase.Action>
                 <ui:AnchorBase.AnchorProvider>
-                  <ui:WaitUiElementAppear FoundElement="{x:Null}" WaitActive="{x:Null}" DisplayName="Find Element 'Last Name '" sap:VirtualizedContainerService.HintSize="334,107" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_6" WaitVisible="True">
+                  <ui:WaitUiElementAppear FoundElement="{x:Null}" WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Find Element 'Last Name '" sap:VirtualizedContainerService.HintSize="334,107" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_6">
                     <ui:WaitUiElementAppear.Target>
                       <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="9eaaeaa5-9b7f-498c-87d5-96b6a8e8ca82" InformativeScreenshot="12cd0ef1496b6c12c07b24d75d7c5a7c" Selector="&lt;html app='chrome.exe' title='Rpa Challenge' /&gt;&lt;webctrl aaname='Last Name' tag='LABEL' /&gt;">
                         <ui:Target.TimeoutMS>
@@ -230,7 +230,7 @@
                   </ActivityAction>
                 </ui:AnchorBase.Action>
                 <ui:AnchorBase.AnchorProvider>
-                  <ui:WaitUiElementAppear FoundElement="{x:Null}" WaitActive="{x:Null}" DisplayName="Find Element 'Company Name'" sap:VirtualizedContainerService.HintSize="334,107" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_7" WaitVisible="True">
+                  <ui:WaitUiElementAppear FoundElement="{x:Null}" WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Find Element 'Company Name'" sap:VirtualizedContainerService.HintSize="334,107" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_7">
                     <ui:WaitUiElementAppear.Target>
                       <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="9eaaeaa5-9b7f-498c-87d5-96b6a8e8ca82" InformativeScreenshot="35945e341b3e9aec0e8abc088596cf3e" Selector="&lt;html app='chrome.exe' title='Rpa Challenge' /&gt;&lt;webctrl aaname='Company Name' tag='LABEL' /&gt;">
                         <ui:Target.TimeoutMS>
@@ -265,7 +265,7 @@
                   </ActivityAction>
                 </ui:AnchorBase.Action>
                 <ui:AnchorBase.AnchorProvider>
-                  <ui:WaitUiElementAppear FoundElement="{x:Null}" WaitActive="{x:Null}" DisplayName="Find Element 'Role in Company'" sap:VirtualizedContainerService.HintSize="334,107" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_8" WaitVisible="True">
+                  <ui:WaitUiElementAppear FoundElement="{x:Null}" WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Find Element 'Role in Company'" sap:VirtualizedContainerService.HintSize="334,107" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_8">
                     <ui:WaitUiElementAppear.Target>
                       <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="9eaaeaa5-9b7f-498c-87d5-96b6a8e8ca82" InformativeScreenshot="6a8d993106ed058575df807bbdab2c78" Selector="&lt;html app='chrome.exe' title='Rpa Challenge' /&gt;&lt;webctrl aaname='Role in Company' tag='LABEL' /&gt;">
                         <ui:Target.TimeoutMS>
@@ -300,7 +300,7 @@
                   </ActivityAction>
                 </ui:AnchorBase.Action>
                 <ui:AnchorBase.AnchorProvider>
-                  <ui:WaitUiElementAppear FoundElement="{x:Null}" WaitActive="{x:Null}" DisplayName="Find Element 'Address'" sap:VirtualizedContainerService.HintSize="334,107" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_9" WaitVisible="True">
+                  <ui:WaitUiElementAppear FoundElement="{x:Null}" WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Find Element 'Address'" sap:VirtualizedContainerService.HintSize="334,107" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_9">
                     <ui:WaitUiElementAppear.Target>
                       <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="9eaaeaa5-9b7f-498c-87d5-96b6a8e8ca82" InformativeScreenshot="b4cd850dcf96c6602e2174592a1a29a0" Selector="&lt;html app='chrome.exe' title='Rpa Challenge' /&gt;&lt;webctrl aaname='Address' tag='LABEL' /&gt;">
                         <ui:Target.TimeoutMS>
@@ -335,7 +335,7 @@
                   </ActivityAction>
                 </ui:AnchorBase.Action>
                 <ui:AnchorBase.AnchorProvider>
-                  <ui:WaitUiElementAppear FoundElement="{x:Null}" WaitActive="{x:Null}" DisplayName="Find Element 'Email'" sap:VirtualizedContainerService.HintSize="334,107" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_10" WaitVisible="True">
+                  <ui:WaitUiElementAppear FoundElement="{x:Null}" WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Find Element 'Email'" sap:VirtualizedContainerService.HintSize="334,107" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_10">
                     <ui:WaitUiElementAppear.Target>
                       <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="9eaaeaa5-9b7f-498c-87d5-96b6a8e8ca82" InformativeScreenshot="f31ef74ee065dc05ce50e3d067cc96ce" Selector="&lt;html app='chrome.exe' title='Rpa Challenge' /&gt;&lt;webctrl aaname='Email' tag='LABEL' /&gt;">
                         <ui:Target.TimeoutMS>
@@ -370,7 +370,7 @@
                   </ActivityAction>
                 </ui:AnchorBase.Action>
                 <ui:AnchorBase.AnchorProvider>
-                  <ui:WaitUiElementAppear FoundElement="{x:Null}" WaitActive="{x:Null}" DisplayName="Find Element 'Phone Number'" sap:VirtualizedContainerService.HintSize="334,107" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_11" WaitVisible="True">
+                  <ui:WaitUiElementAppear FoundElement="{x:Null}" WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Find Element 'Phone Number'" sap:VirtualizedContainerService.HintSize="334,107" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_11">
                     <ui:WaitUiElementAppear.Target>
                       <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="9eaaeaa5-9b7f-498c-87d5-96b6a8e8ca82" InformativeScreenshot="4c1f09a3aedfee05cfed0213e386f51d" Selector="&lt;html app='chrome.exe' title='Rpa Challenge' /&gt;&lt;webctrl aaname='Phone Number' tag='LABEL' /&gt;">
                         <ui:Target.TimeoutMS>

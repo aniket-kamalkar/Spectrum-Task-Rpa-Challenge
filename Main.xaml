@@ -86,27 +86,15 @@
   <Flowchart sap:VirtualizedContainerService.HintSize="664,724" sap2010:WorkflowViewState.IdRef="Flowchart_1">
     <Flowchart.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="Dt_Challenge" />
-      <Variable x:TypeArguments="x:String" Name="RpaChallemgeURL">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:String">https://www.rpachallenge.com/</Literal>
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="x:String" Default="https://www.rpachallenge.com/" Name="RpaChallemgeURL" />
       <Variable x:TypeArguments="x:Boolean" Name="FailedFlag" />
-      <Variable x:TypeArguments="x:String" Name="ChallengeExcelPath">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:String">Data\challenge.xlsx</Literal>
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="x:String" Default="Data\challenge.xlsx" Name="ChallengeExcelPath" />
       <Variable x:TypeArguments="x:Int32" Name="RetryCounter">
         <Variable.Default>
-          <Literal x:TypeArguments="x:Int32" Value="1" />
+          <Literal x:TypeArguments="x:Int32" Value="2" />
         </Variable.Default>
       </Variable>
-      <Variable x:TypeArguments="x:TimeSpan" Name="RetryInterval">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:TimeSpan" Value="00:00:01" />
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="x:TimeSpan" Default="00:00:01" Name="RetryInterval" />
     </Flowchart.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -134,18 +122,10 @@
         <TryCatch.Try>
           <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Read_Data workflow" sap:VirtualizedContainerService.HintSize="334,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Read_Data.xaml">
             <ui:InvokeWorkflowFile.Arguments>
-              <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_Dt_Challenge">
-                <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="Dt_Challenge" />
-              </OutArgument>
-              <InArgument x:TypeArguments="x:String" x:Key="in_ChallengeExcelPath">
-                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="ChallengeExcelPath" />
-              </InArgument>
-              <InArgument x:TypeArguments="x:Int32" x:Key="in_RetryCounter">
-                <VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="RetryCounter" />
-              </InArgument>
-              <InArgument x:TypeArguments="x:TimeSpan" x:Key="in_RetryInterval">
-                <VisualBasicValue x:TypeArguments="x:TimeSpan" ExpressionText="RetryInterval" />
-              </InArgument>
+              <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_Dt_Challenge">[Dt_Challenge]</OutArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_ChallengeExcelPath">[ChallengeExcelPath]</InArgument>
+              <InArgument x:TypeArguments="x:Int32" x:Key="in_RetryCounter">[RetryCounter]</InArgument>
+              <InArgument x:TypeArguments="x:TimeSpan" x:Key="in_RetryInterval">[RetryInterval]</InArgument>
             </ui:InvokeWorkflowFile.Arguments>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -155,10 +135,10 @@
           </ui:InvokeWorkflowFile>
         </TryCatch.Try>
         <TryCatch.Catches>
-          <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="502,394" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
@@ -166,7 +146,7 @@
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
               </ActivityAction.Argument>
-              <Sequence sap:VirtualizedContainerService.HintSize="496,325" sap2010:WorkflowViewState.IdRef="Sequence_3">
+              <Sequence sap:VirtualizedContainerService.HintSize="496,321" sap2010:WorkflowViewState.IdRef="Sequence_3">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -187,10 +167,7 @@
         </TryCatch.Catches>
       </TryCatch>
       <FlowStep.Next>
-        <FlowDecision x:Name="__ReferenceID4" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79,87" sap2010:WorkflowViewState.IdRef="FlowDecision_2">
-          <FlowDecision.Condition>
-            <VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="not FailedFlag" />
-          </FlowDecision.Condition>
+        <FlowDecision x:Name="__ReferenceID4" Condition="[not FailedFlag]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79,87" sap2010:WorkflowViewState.IdRef="FlowDecision_2">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -213,15 +190,9 @@
                 <TryCatch.Try>
                   <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Open_Application workflow" sap:VirtualizedContainerService.HintSize="334,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Open_Application.xaml">
                     <ui:InvokeWorkflowFile.Arguments>
-                      <InArgument x:TypeArguments="x:String" x:Key="in_RpaChallengeURL">
-                        <VisualBasicValue x:TypeArguments="x:String" ExpressionText="RpaChallemgeURL" />
-                      </InArgument>
-                      <InArgument x:TypeArguments="x:Int32" x:Key="in_RetryCounter">
-                        <VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="RetryCounter" />
-                      </InArgument>
-                      <InArgument x:TypeArguments="x:TimeSpan" x:Key="in_RetryInterval">
-                        <VisualBasicValue x:TypeArguments="x:TimeSpan" ExpressionText="RetryInterval" />
-                      </InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_RpaChallengeURL">[RpaChallemgeURL]</InArgument>
+                      <InArgument x:TypeArguments="x:Int32" x:Key="in_RetryCounter">[RetryCounter]</InArgument>
+                      <InArgument x:TypeArguments="x:TimeSpan" x:Key="in_RetryInterval">[RetryInterval]</InArgument>
                     </ui:InvokeWorkflowFile.Arguments>
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -231,10 +202,10 @@
                   </ui:InvokeWorkflowFile>
                 </TryCatch.Try>
                 <TryCatch.Catches>
-                  <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="502,394" sap2010:WorkflowViewState.IdRef="Catch`1_3">
+                  <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_3">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
@@ -242,7 +213,7 @@
                       <ActivityAction.Argument>
                         <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                       </ActivityAction.Argument>
-                      <Sequence sap:VirtualizedContainerService.HintSize="496,325" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                      <Sequence sap:VirtualizedContainerService.HintSize="496,321" sap2010:WorkflowViewState.IdRef="Sequence_4">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -263,10 +234,7 @@
                 </TryCatch.Catches>
               </TryCatch>
               <FlowStep.Next>
-                <FlowDecision x:Name="__ReferenceID2" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79,87" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
-                  <FlowDecision.Condition>
-                    <VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="not FailedFlag" />
-                  </FlowDecision.Condition>
+                <FlowDecision x:Name="__ReferenceID2" Condition="[not FailedFlag]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79,87" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -285,13 +253,11 @@
                           <av:PointCollection x:Key="ConnectorLocation">200,560 300,560 300,576.5</av:PointCollection>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <TryCatch sap:VirtualizedContainerService.HintSize="536,557" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+                      <TryCatch sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="TryCatch_1">
                         <TryCatch.Try>
                           <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Filling_Data_Into_Application workflow" sap:VirtualizedContainerService.HintSize="350,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Filling_Data_Into_Application.xaml">
                             <ui:InvokeWorkflowFile.Arguments>
-                              <InArgument x:TypeArguments="sd:DataTable" x:Key="in_Dt_Challenge">
-                                <VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="Dt_Challenge" />
-                              </InArgument>
+                              <InArgument x:TypeArguments="sd:DataTable" x:Key="in_Dt_Challenge">[Dt_Challenge]</InArgument>
                             </ui:InvokeWorkflowFile.Arguments>
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -333,10 +299,7 @@
                         </TryCatch.Catches>
                       </TryCatch>
                       <FlowStep.Next>
-                        <FlowDecision x:Name="__ReferenceID5" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79,87" sap2010:WorkflowViewState.IdRef="FlowDecision_4">
-                          <FlowDecision.Condition>
-                            <VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="Not FailedFlag" />
-                          </FlowDecision.Condition>
+                        <FlowDecision x:Name="__ReferenceID5" Condition="[Not FailedFlag]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79,87" sap2010:WorkflowViewState.IdRef="FlowDecision_4">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
