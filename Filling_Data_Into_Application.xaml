@@ -127,7 +127,7 @@
           </ui:Target>
         </ui:Click.Target>
       </ui:Click>
-      <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[in_Dt_Challenge]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="822,2216" sap2010:WorkflowViewState.IdRef="ForEachRow_3">
+      <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[in_Dt_Challenge]" DisplayName="For Each Row in RPA Challenge Excel" sap:VirtualizedContainerService.HintSize="822,2216" sap2010:WorkflowViewState.IdRef="ForEachRow_3">
         <ui:ForEachRow.Body>
           <ActivityAction x:TypeArguments="sd:DataRow">
             <ActivityAction.Argument>

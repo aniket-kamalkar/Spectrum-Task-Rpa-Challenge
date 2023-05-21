@@ -93,9 +93,6 @@
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="Open_Application" sap:VirtualizedContainerService.HintSize="712,1407" sap2010:WorkflowViewState.IdRef="Sequence_1">
-    <Sequence.Variables>
-      <Variable x:TypeArguments="x:String" Name="RpaChallengeURL" />
-    </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -103,10 +100,10 @@
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="650,92" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Application Opening Started&quot;]" />
     <ui:KillProcess AppliesTo="{x:Null}" ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="Killing chrome before launch" sap:VirtualizedContainerService.HintSize="650,133" sap2010:WorkflowViewState.IdRef="KillProcess_1" ProcessName="chrome" />
-    <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="650,859" sap2010:WorkflowViewState.IdRef="RetryScope_2" NumberOfRetries="[in_RetryCounter]" RetryInterval="[in_RetryInterval]">
+    <ui:RetryScope DisplayName="Retry Scope - Open Browser" sap:VirtualizedContainerService.HintSize="650,859" sap2010:WorkflowViewState.IdRef="RetryScope_2" NumberOfRetries="[in_RetryCounter]" RetryInterval="[in_RetryInterval]">
       <ui:RetryScope.ActivityBody>
         <ActivityAction>
-          <Sequence sap:VirtualizedContainerService.HintSize="608,592" sap2010:WorkflowViewState.IdRef="Sequence_18">
+          <Sequence DisplayName="Open Browser Sequence" sap:VirtualizedContainerService.HintSize="608,592" sap2010:WorkflowViewState.IdRef="Sequence_18">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -119,7 +116,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="484,92" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Retry Scope&quot;]" />
-              <ui:OpenBrowser AutomaticallyDownloadWebDriver="{x:Null}" CommunicationMethod="{x:Null}" Hidden="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="484,238" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" NewSession="True" Url="[in_RpaChallengeURL]">
+              <ui:OpenBrowser AutomaticallyDownloadWebDriver="{x:Null}" CommunicationMethod="{x:Null}" Hidden="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Open RPA Challenge Website" sap:VirtualizedContainerService.HintSize="484,238" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" NewSession="True" Url="[in_RpaChallengeURL]">
                 <ui:OpenBrowser.Body>
                   <ActivityAction x:TypeArguments="x:Object">
                     <ActivityAction.Argument>
@@ -148,7 +145,7 @@
       </ui:RetryScope.ActivityBody>
       <ui:RetryScope.Condition>
         <ActivityFunc x:TypeArguments="x:Boolean">
-          <ui:UiElementExists Exists="{x:Null}" DisplayName="Page Exists " sap:VirtualizedContainerService.HintSize="334,107" sap2010:WorkflowViewState.IdRef="UiElementExists_4">
+          <ui:UiElementExists Exists="{x:Null}" DisplayName="Main Page Exists " sap:VirtualizedContainerService.HintSize="334,107" sap2010:WorkflowViewState.IdRef="UiElementExists_4">
             <ui:UiElementExists.Target>
               <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="900fd3ca-b5cb-48f9-bba3-5b463f6b0498" InformativeScreenshot="42571cfe38a18870b44040836a7e9b4c" Selector="&lt;html app='chrome.exe' title='Rpa Challenge' /&gt;&lt;webctrl tag='INPUT' type='submit' /&gt;">
                 <ui:Target.TimeoutMS>
